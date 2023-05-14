@@ -9,31 +9,25 @@ export function loanReducer(state, action) {
     case "SET_INTEREST_RATE": {
       return {
         ...state,
-        interestRate: action.payload,
+        interestRate: parseFloat(parseFloat(action.payload).toFixed(2)),
       };
     }
-    case "SET_PROCESSING_FEE": {
+    case "SET_LOANTENURE_TYPE": {
       return {
         ...state,
-        processingFee: action.payload,
+        loanTenureType: action.payload,
       };
     }
-    case "SET_DOWNPAYMENT": {
+    case "SET_TENURE_MONTHS": {
       return {
         ...state,
-        downPayment: action.payload,
+        loanTenureMonths: action.payload,
       };
     }
-    case "SET_EMI": {
+    case "SET_TENURE_YEARS": {
       return {
         ...state,
-        emi: action.payload,
-      };
-    }
-    case "SET_TENURE": {
-      return {
-        ...state,
-        tenure: action.payload,
+        loanTenureYears: action.payload,
       };
     }
     default:
